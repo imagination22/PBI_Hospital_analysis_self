@@ -993,6 +993,10 @@ GROUP BY
     WHEN fms.stock_quantity < fms.reorder_level THEN 'Below Reorder'
     ELSE 'Sufficient'
   END AS stock_status
+  , CASE 
+    WHEN fms.stock_quantity < fms.reorder_level THEN 'https://i.ibb.co/39KqvD91/b.png'
+    ELSE 'https://i.ibb.co/SXvpDkWT/safe.png'
+  END AS Status
   into GOLD.pbi_reorder_risk_analysis
 FROM gold.Fact_MedicineInventorySnapshot fms
 JOIN gold.dim_medicine dm ON dm.medicine_skey = fms.medicine_skey;
