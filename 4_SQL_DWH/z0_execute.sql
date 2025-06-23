@@ -1,23 +1,39 @@
-	 use My_Hospital
-														-- create Sb and schema
-	exec bronze.create_ddl_bronze
-														--exec Silver.create_silver_cleanup
-	exec Silver.create_ddl_silver
-	exec Silver_error.create_ddl_error_silver
-														--exec Silver_error.create_silver_error_cleanup
-														--exec Gold.cleanup
-	exec Gold.create_ddl_gold
-	EXEC bronze.load_bronze;
-	EXEC silver.load_silver;
-	exec gold.insert_dim_date
-														--exec  Gold.inssert_gold
-	exec Gold.insert_gold
+USE My_Hospital
+/******************************************************************************/
+/*  create DB and schema  */
+-- run 1_INIT.sql
 
 
+/******************************************************************************/
 
-	select * from silver_error.PatientTest		where patient_id not in (select patient_id from silver.Patient)
-	select * from silver_error.PatientTest		where doctor_id not in (select doctor_id from silver.Doctor)
-	select * from silver_error.PatientTest		where test_id not in (select test_id from silver.MedicalTest)
+/*  create tables in schema  */
+-- Bronze													
+EXEC bronze.create_ddl_bronze
+
+EXEC bronze.load_bronze;
 
 
-		
+/******************************************************************************/
+
+-- Silver
+--exec Silver.create_silver_cleanup
+--exec Silver_error.create_silver_error_cleanup
+EXEC Silver.create_ddl_silver
+
+EXEC Silver_error.create_ddl_error_silver
+
+EXEC silver.load_silver;
+
+/******************************************************************************/
+
+-- gOLD													
+EXEC Gold.cleanup
+
+EXEC Gold.create_ddl_gold
+
+EXEC gold.insert_dim_date
+
+EXEC Gold.insert_gold
+
+EXEC Gold.pivot_bill_sp
+

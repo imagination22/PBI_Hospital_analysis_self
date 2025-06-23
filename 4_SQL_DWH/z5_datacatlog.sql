@@ -1,4 +1,5 @@
 -- Replace 'YourSchemaName' with 'Silver' or 'Gold'
+USE My_Hospital
 SELECT 
     t.TABLE_SCHEMA,
     t.TABLE_NAME,
@@ -51,5 +52,6 @@ LEFT JOIN (
     ON c.TABLE_SCHEMA = fk.TABLE_SCHEMA 
    AND c.TABLE_NAME = fk.TABLE_NAME 
    AND c.COLUMN_NAME = fk.COLUMN_NAME
-WHERE t.TABLE_SCHEMA = 'gold'
+WHERE  t.TABLE_SCHEMA in ( 'gold','silver') AND T.TABLE_NAME LIKE '%test%'
 ORDER BY t.TABLE_NAME, c.ORDINAL_POSITION;
+

@@ -1,4 +1,4 @@
-ï»¿CREATE
+CREATE
 	OR
 
 ALTER PROCEDURE Gold.create_ddl_gold
@@ -25,6 +25,24 @@ BEGIN
 			,image_path VARCHAR(500) NULL
 			);
 
+		/*	CREATE TABLE dim_doctor (
+    doctor_skey        INT NOT NULL,
+    doctor_id          VARCHAR(255) NULL,
+    name               VARCHAR(255) NULL,
+    specialization     VARCHAR(100) NULL,
+    experience_years   INT NULL,
+    availability       VARCHAR(50) NULL,
+    salary             DECIMAL(10, 2) NULL,
+    department_skey    INT NULL,
+    STATUS             VARCHAR(50) NULL,
+    joining_date       DATE NULL,
+    qualification      VARCHAR(255) NULL,
+    phone              VARCHAR(20) NULL,
+    email              VARCHAR(255) NULL,
+    image_path         VARCHAR(500) NULL
+);*/
+		--select * from silver.Doctor
+		--select * from GOLD.Dim_Doctor
 		CREATE TABLE GOLD.Dim_Doctor (
 			doctor_skey INT PRIMARY KEY identity
 			,doctor_id VARCHAR(255) UNIQUE
@@ -32,6 +50,7 @@ BEGIN
 			,specialization VARCHAR(100)
 			,experience_years INT
 			,availability VARCHAR(50)
+			--,salary Decimal(10,2)
 			);
 
 		CREATE TABLE GOLD.Dim_PaymentMethod (
@@ -54,6 +73,7 @@ BEGIN
 			,head_doctor_id VARCHAR(255)
 			,total_staff INT
 			,phone_extension VARCHAR(10)
+			,description VARCHAR(max)
 			);
 
 		/*
@@ -83,6 +103,9 @@ CREATE TABLE GOLD.Dim_Room (
 			,test_name VARCHAR(255)
 			,category VARCHAR(100)
 			,cost DECIMAL(10, 2)
+			,department_id VARCHAR(255)
+			,duration INT
+			,fasting_required VARCHAR(10)
 			);
 
 		CREATE TABLE GOLD.Dim_Medicine (
@@ -104,6 +127,7 @@ CREATE TABLE GOLD.Dim_Room (
 			,STATE VARCHAR(50)
 			);
 
+		/*
 		CREATE TABLE GOLD.Dim_Date (
 			date_skey INT PRIMARY KEY IDENTITY(1, 1)
 			,full_date DATE UNIQUE
@@ -113,6 +137,53 @@ CREATE TABLE GOLD.Dim_Room (
 			,quarter INT
 			,day_of_week VARCHAR(20)
 			,is_weekend BIT
+			);*/
+		/*CREATE TABLE GOLD.Dim_Date (
+    date_skey INT PRIMARY KEY IDENTITY(1, 1),
+    full_date DATE UNIQUE,
+    day INT,
+    day_of_week VARCHAR(20),
+    short_day_name CHAR(3),
+    month_index INT,
+    month_name VARCHAR(20),
+    short_month_name CHAR(3),
+    year INT,
+    week INT,
+    quarter INT,
+    month_year VARCHAR(20),
+    is_weekend BIT,
+    formatted_date VARCHAR(15)
+);
+*/
+		CREATE TABLE GOLD.Dim_Date (
+			date_skey INT PRIMARY KEY IDENTITY(1, 1)
+			,full_date DATE UNIQUE
+			,-- Full date (e.g., 2024-01-01)
+			day INT
+			,-- Day of month
+			week INT
+			,-- Week number of year
+			month_index INT
+			,-- 1 = January, 12 = December
+			year INT
+			,-- Year (e.g., 2025)
+			quarter INT
+			,-- Quarter (1–4)
+			day_of_week VARCHAR(20)
+			,-- Full name (e.g., Monday)
+			short_day_name CHAR(3)
+			,-- Short name (e.g., Mon)
+			day_of_week_index INT
+			,-- 1 = Monday, ..., 7 = Sunday
+			month_name VARCHAR(20)
+			,-- Full month name (e.g., January)
+			short_month_name CHAR(3)
+			,-- Short month name (e.g., Jan)
+			month_year VARCHAR(20)
+			,-- Month and year (e.g., Jan-2025)
+			is_weekend BIT
+			,-- 1 = Saturday/Sunday, 0 = Weekday
+			formatted_date VARCHAR(15) -- e.g., 21-Jun-2025
 			);
 
 		CREATE TABLE GOLD.Dim_Time (
@@ -128,6 +199,7 @@ CREATE TABLE GOLD.Dim_Room (
 			bed_skey INT PRIMARY KEY IDENTITY(1, 1)
 			,bed_id VARCHAR(255) UNIQUE
 			,room_skey INT
+			,patient_id VARCHAR(255)
 			,--  Define this column before using it in a FK constraint
 			STATUS VARCHAR(50)
 			,-- Available, Occupied, Maintenance
@@ -147,6 +219,7 @@ CREATE TABLE GOLD.Dim_Room (
 			,payment_method_skey INT
 			,discount DECIMAL(5, 2)
 			,fees DECIMAL(10, 2)
+			,schedule DATETIME2
 			,FOREIGN KEY (patient_skey) REFERENCES GOLD.Dim_Patient(patient_skey)
 			,FOREIGN KEY (doctor_skey) REFERENCES GOLD.Dim_Doctor(doctor_skey)
 			,FOREIGN KEY (department_skey) REFERENCES GOLD.Dim_Department(department_skey)
@@ -305,7 +378,8 @@ CREATE TABLE GOLD.Fact_PatientStay (
 			,qualification VARCHAR(255)
 			,phone VARCHAR(20)
 			,email VARCHAR(255)
-			,image_path VARCHAR(500);
+			,image_path VARCHAR(500)
+			,salary DECIMAL(10, 2);
 
 		ALTER TABLE GOLD.Fact_Appointments ADD time_skey INT FOREIGN KEY REFERENCES GOLD.Dim_Time (time_skey)
 			,STATUS VARCHAR(50)
@@ -465,6 +539,18 @@ CREATE TABLE GOLD.Fact_PatientStay (
 				)
 			,FOREIGN KEY (department_skey) REFERENCES GOLD.Dim_Department(department_skey)
 			);
+			CREATE TABLE gold.fact_medicine_purchase (
+    purchase_skey INT IDENTITY(1,1) PRIMARY KEY,
+    patient_skey INT NOT NULL,
+    medicine_skey INT NOT NULL,
+    date_skey INT NOT NULL,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10,2) NULL, -- optional, if price varies
+    FOREIGN KEY (patient_skey) REFERENCES gold.Dim_Patient(patient_skey),
+    FOREIGN KEY (medicine_skey) REFERENCES gold.Dim_Medicine(medicine_skey),
+    FOREIGN KEY (date_skey) REFERENCES gold.Dim_Date(date_skey)
+);
+
 	END TRY
 
 	BEGIN CATCH

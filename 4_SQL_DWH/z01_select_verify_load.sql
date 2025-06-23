@@ -1,151 +1,439 @@
-use My_Hospital
-	Select count(*) from 	Bronze.Patient
-	Select count(*) from    Bronze.Department
-	Select count(*) from    Bronze.Doctor
-	Select count(*) from    Bronze.Appointment
-	Select count(*) from    Bronze.Surgery
-	Select count(*) from    Bronze.Room
-	Select count(*) from    Bronze.Bed 
-	Select count(*) from    Bronze.Billing
-	Select count(*) from    Bronze.MedicalStock
-	Select count(*) from    Bronze.MedicalTest
-	Select count(*) from    Bronze.PatientTest
-	Select count(*) from    Bronze.SatisfactionScore
-	Select count(*) from    Bronze.Staff
-	Select count(*) from    Bronze.Supplier
-	Select count(*) from    Bronze.medicine_patient
+USE My_Hospital
+
+/******************************************************************************/
+SELECT count(*)
+FROM Bronze.Patient
+
+SELECT count(*)
+FROM Bronze.Department
+
+SELECT count(*)
+FROM Bronze.Doctor
+
+SELECT count(*)
+FROM Bronze.Appointment
+
+SELECT count(*)
+FROM Bronze.Surgery
+
+SELECT count(*)
+FROM Bronze.Room
+
+SELECT count(*)
+FROM Bronze.Bed
+
+SELECT count(*)
+FROM Bronze.Billing
+
+SELECT count(*)
+FROM Bronze.MedicalStock
+
+SELECT count(*)
+FROM Bronze.MedicalTest
+
+SELECT count(*)
+FROM Bronze.PatientTest
+
+SELECT count(*)
+FROM Bronze.SatisfactionScore
+
+SELECT count(*)
+FROM Bronze.Staff
+
+SELECT count(*)
+FROM Bronze.Supplier
+
+SELECT count(*)
+FROM Bronze.medicine_patient
+
+/******************************************************************************/
+SELECT count(*)
+FROM Silver_error.Appointment
+
+SELECT count(*)
+FROM Silver_error.Bed
+
+SELECT count(*)
+FROM Silver_error.Billing
+
+SELECT count(*)
+FROM Silver_error.Department
+
+SELECT count(*)
+FROM Silver_error.Doctor
+
+SELECT count(*)
+FROM Silver_error.MedicalStock
+
+SELECT count(*)
+FROM Silver_error.MedicalTest
+
+SELECT count(*)
+FROM Silver_error.medicine_patient
+
+SELECT count(*)
+FROM Silver_error.Patient
+
+SELECT count(*)
+FROM Silver_error.PatientTest
+
+SELECT count(*)
+FROM Silver_error.Room
+
+SELECT count(*)
+FROM Silver_error.SatisfactionScore
+
+SELECT count(*)
+FROM Silver_error.Staff
+
+SELECT count(*)
+FROM Silver_error.Supplier
+
+SELECT count(*)
+FROM Silver_error.Surgery
+
+/******************************************************************************/
+SELECT count(*)
+FROM Silver.Appointment
+
+SELECT count(*)
+FROM Silver.Bed
+
+SELECT count(*)
+FROM Silver.Billing
+
+SELECT count(*)
+FROM Silver.Department
+
+SELECT count(*)
+FROM Silver.Doctor
+
+SELECT count(*)
+FROM Silver.MedicalStock
+
+SELECT count(*)
+FROM Silver.MedicalTest
+
+SELECT count(*)
+FROM Silver.medicine_patient
+
+SELECT count(*)
+FROM Silver.Patient
+
+SELECT count(*)
+FROM Silver.PatientTest
+
+SELECT count(*)
+FROM Silver.Room
+
+SELECT count(*)
+FROM Silver.SatisfactionScore
+
+SELECT count(*)
+FROM Silver.Staff
+
+SELECT count(*)
+FROM Silver.Supplier
+
+SELECT count(*)
+FROM Silver.Surgery
+
+/******************************************************************************/
+SELECT count(*)
+FROM gold.Fact_Admissions
+
+SELECT count(*)
+FROM gold.Fact_Appointments
+
+SELECT count(*)
+FROM gold.Fact_Billing
+
+SELECT count(*)
+FROM gold.Fact_MedicineInventorySnapshot
+
+SELECT count(*)
+FROM gold.Fact_MedicinePurchases
+
+SELECT count(*)
+FROM gold.Fact_PatientStay
+
+SELECT count(*)
+FROM gold.Fact_PatientVitals
+
+SELECT count(*)
+FROM gold.Fact_SatisfactionScore
+
+SELECT count(*)
+FROM gold.Fact_Tests
+
+SELECT count(*)
+FROM gold.Agg_BedOccupancy
+
+SELECT count(*)
+FROM gold.Agg_DoctorPerformance
+
+SELECT count(*)
+FROM gold.Agg_MonthlyRevenue
+
+SELECT count(*)
+FROM gold.Agg_PatientDemographics
+
+SELECT count(*)
+FROM gold.Agg_SatisfactionTrend
+
+SELECT count(*)
+FROM gold.Agg_TestAnalytics
+
+SELECT count(*)
+FROM gold.Dim_Bed
+
+SELECT count(*)
+FROM gold.Dim_Date
+
+SELECT count(*)
+FROM gold.Dim_Department
+
+SELECT count(*)
+FROM gold.Dim_Doctor
+
+SELECT count(*)
+FROM gold.Dim_Medicine
+
+SELECT count(*)
+FROM gold.Dim_Patient
+
+SELECT count(*)
+FROM gold.Dim_PaymentMethod
+
+SELECT count(*)
+FROM gold.Dim_Room
+
+SELECT count(*)
+FROM gold.Dim_Staff
+
+SELECT count(*)
+FROM gold.Dim_Supplier
+
+SELECT count(*)
+FROM gold.Dim_Test
+
+SELECT count(*)
+FROM gold.Dim_Time
+
+/******************************************************************************/
+SELECT *
+FROM Bronze.Patient
+
+SELECT *
+FROM Bronze.Department
+
+SELECT *
+FROM Bronze.Doctor
+
+SELECT *
+FROM Bronze.Appointment
+
+SELECT *
+FROM Bronze.Surgery
+
+SELECT *
+FROM Bronze.Room
+
+SELECT *
+FROM Bronze.Bed
+
+SELECT *
+FROM Bronze.Billing
+
+SELECT *
+FROM Bronze.MedicalStock
+
+SELECT *
+FROM Bronze.MedicalTest
+
+SELECT *
+FROM Bronze.PatientTest
+
+SELECT *
+FROM Bronze.SatisfactionScore
+
+SELECT *
+FROM Bronze.Staff
+
+SELECT *
+FROM Bronze.Supplier
+
+SELECT *
+FROM Bronze.medicine_patient
+
+/******************************************************************************/
+SELECT *
+FROM Silver.Patient
+
+SELECT *
+FROM Silver.Department
+
+SELECT *
+FROM Silver.Doctor
+
+SELECT *
+FROM Silver.Appointment
+
+SELECT *
+FROM Silver.Surgery
+
+SELECT *
+FROM Silver.Room
+
+SELECT *
+FROM Silver.Bed
+
+SELECT *
+FROM Silver.Billing
+
+SELECT *
+FROM Silver.MedicalStock
+
+SELECT *
+FROM Silver.MedicalTest
+
+SELECT *
+FROM Silver.PatientTest
+
+SELECT *
+FROM Silver.SatisfactionScore
+
+SELECT *
+FROM Silver.Staff
+
+SELECT *
+FROM Silver.Supplier
+
+SELECT *
+FROM Silver.medicine_patient
+
+/******************************************************************************/
+SELECT *
+FROM Gold.Agg_BedOccupancy
+
+SELECT *
+FROM Gold.Agg_DoctorPerformance
+
+SELECT *
+FROM Gold.Agg_MonthlyRevenue
+
+SELECT *
+FROM Gold.Dim_Bed
+
+SELECT *
+FROM Gold.Dim_Date
+
+SELECT *
+FROM Gold.Dim_Department
+
+SELECT *
+FROM Gold.Dim_Doctor
+
+SELECT *
+FROM Gold.Dim_Medicine
+
+SELECT *
+FROM Gold.Dim_Patient
+
+SELECT *
+FROM Gold.Dim_PaymentMethod
+
+SELECT *
+FROM Gold.Dim_Room
+
+SELECT *
+FROM Gold.Dim_Supplier
+
+SELECT *
+FROM Gold.Dim_Test
+
+SELECT *
+FROM Gold.Fact_Admissions
+
+SELECT *
+FROM Gold.Fact_Appointments
+
+SELECT *
+FROM Gold.Fact_Billing
+
+SELECT *
+FROM Gold.Fact_MedicinePurchases
+
+SELECT *
+FROM Gold.Fact_PatientStay
+
+SELECT *
+FROM Gold.Fact_PatientVitals
+
+SELECT *
+FROM Gold.Fact_Tests
+
+/******************************************************************************/
+SELECT *
+FROM Gold.Dim_Date
+
+SELECT *
+FROM Gold.Dim_Patient
+
+SELECT *
+FROM Gold.Dim_Department
+
+SELECT *
+FROM Gold.Dim_Doctor
+
+SELECT *
+FROM Gold.Dim_PaymentMethod
+
+/******************************************************************************/
+SELECT *
+FROM Gold.Fact_Appointments
+
+SELECT *
+FROM Gold.Fact_Admissions
+
+SELECT *
+FROM Gold.Fact_PatientVitals
+
+/******************************************************************************/
+SELECT *
+FROM Gold.Dim_Bed
+
+SELECT *
+FROM Gold.Dim_Room
+
+SELECT *
+FROM Gold.Fact_PatientStay
 
 
-select count(*) from  Silver_error.Appointment
-select count(*) from  Silver_error.Bed
-select count(*) from  Silver_error.Billing
-select count(*) from  Silver_error.Department
-select count(*) from  Silver_error.Doctor
-select count(*) from  Silver_error.MedicalStock
-select count(*) from  Silver_error.MedicalTest
-select count(*) from  Silver_error.medicine_patient
-select count(*) from  Silver_error.Patient
-select count(*) from  Silver_error.PatientTest
-select count(*) from  Silver_error.Room
-select count(*) from  Silver_error.SatisfactionScore
-select count(*) from  Silver_error.Staff
-select count(*) from  Silver_error.Supplier
-select count(*) from  Silver_error.Surgery
+select * from gold.dim_surgery
+select * from gold.pbi_appointment
 
+SELECT *
+FROM gold.pbi_tests
 
-select count(*) from  Silver.Appointment
-select count(*) from  Silver.Bed
-select count(*) from  Silver.Billing
-select count(*) from  Silver.Department
-select count(*) from  Silver.Doctor
-select count(*) from  Silver.MedicalStock
-select count(*) from  Silver.MedicalTest
-select count(*) from  Silver.medicine_patient
-select count(*) from  Silver.Patient
-select count(*) from  Silver.PatientTest
-select count(*) from  Silver.Room
-select count(*) from  Silver.SatisfactionScore
-select count(*) from  Silver.Staff
-select count(*) from  Silver.Supplier
-select count(*) from  Silver.Surgery
+/*   only eRror table data   */
+SELECT *
+FROM silver_error.PatientTest
+WHERE patient_id NOT IN (
+		SELECT patient_id
+		FROM silver.Patient
+		)
 
-select count(*) from gold.Fact_Admissions
-select count(*) from gold.Fact_Appointments
-select count(*) from gold.Fact_Billing
-select count(*) from gold.Fact_MedicineInventorySnapshot
-select count(*) from gold.Fact_MedicinePurchases
-select count(*) from gold.Fact_PatientStay
-select count(*) from gold.Fact_PatientVitals
-select count(*) from gold.Fact_SatisfactionScore
-select count(*) from gold.Fact_Tests
-select count(*) from gold.Agg_BedOccupancy
-select count(*) from gold.Agg_DoctorPerformance
-select count(*) from gold.Agg_MonthlyRevenue
-select count(*) from gold.Agg_PatientDemographics
-select count(*) from gold.Agg_SatisfactionTrend
-select count(*) from gold.Agg_TestAnalytics
-select count(*) from gold.Dim_Bed
-select count(*) from gold.Dim_Date
-select count(*) from gold.Dim_Department
-select count(*) from gold.Dim_Doctor
-select count(*) from gold.Dim_Medicine
-select count(*) from gold.Dim_Patient
-select count(*) from gold.Dim_PaymentMethod
-select count(*) from gold.Dim_Room
-select count(*) from gold.Dim_Staff
-select count(*) from gold.Dim_Supplier
-select count(*) from gold.Dim_Test
-select count(*) from gold.Dim_Time
+SELECT *
+FROM silver_error.PatientTest
+WHERE doctor_id NOT IN (
+		SELECT doctor_id
+		FROM silver.Doctor
+		)
 
-	Select * from 	Bronze.Patient
-	Select * from    Bronze.Department
-	Select * from    Bronze.Doctor
-	Select * from    Bronze.Appointment
-	Select * from    Bronze.Surgery
-	Select * from    Bronze.Room
-	Select * from    Bronze.Bed 
-	Select * from    Bronze.Billing
-	Select * from    Bronze.MedicalStock
-	Select * from    Bronze.MedicalTest
-	Select * from    Bronze.PatientTest
-	Select * from    Bronze.SatisfactionScore
-	Select * from    Bronze.Staff
-	Select * from    Bronze.Supplier
-	Select * from    Bronze.medicine_patient
-
-	Select * from 	Silver.Patient
-	Select * from    Silver.Department
-	Select * from    Silver.Doctor
-	Select * from    Silver.Appointment
-	Select * from    Silver.Surgery
-	Select * from    Silver.Room
-	Select * from    Silver.Bed 
-	Select * from    Silver.Billing
-	Select * from    Silver.MedicalStock
-	Select * from    Silver.MedicalTest
-	Select * from    Silver.PatientTest
-	Select * from    Silver.SatisfactionScore
-	Select * from    Silver.Staff
-	Select * from    Silver.Supplier
-	Select * from    Silver.medicine_patient
-	
-
-
-
-	
-select * from Gold.Agg_BedOccupancy
-select * from Gold.Agg_DoctorPerformance
-select * from Gold.Agg_MonthlyRevenue
-select * from Gold.Dim_Bed
-select * from Gold.Dim_Date
-select * from Gold.Dim_Department
-select * from Gold.Dim_Doctor
-select * from Gold.Dim_Medicine
-select * from Gold.Dim_Patient
-select * from Gold.Dim_PaymentMethod
-select * from Gold.Dim_Room
-select * from Gold.Dim_Supplier
-select * from Gold.Dim_Test
-select * from Gold.Fact_Admissions
-select * from Gold.Fact_Appointments
-select * from Gold.Fact_Billing
-select * from Gold.Fact_MedicinePurchases
-select * from Gold.Fact_PatientStay
-select * from Gold.Fact_PatientVitals
-select * from Gold.Fact_Tests
-
-
-select * from Gold.Dim_Date
-select * from Gold.Dim_Patient
-select * from Gold.Dim_Department
-select * from Gold.Dim_Doctor
-select * from Gold.Dim_PaymentMethod
-
-
-select * from Gold.Fact_Appointments
-select * from Gold.Fact_Admissions
-select * from Gold.Fact_PatientVitals
-
-select * from Gold.Dim_Bed
-select * from Gold.Dim_Room
-select * from Gold.Fact_PatientStay
+SELECT *
+FROM silver_error.PatientTest
+WHERE test_id NOT IN (
+		SELECT test_id
+		FROM silver.MedicalTest
+		)

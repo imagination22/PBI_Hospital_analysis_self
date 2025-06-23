@@ -60,6 +60,7 @@ BEGIN
 		,head_doctor_id VARCHAR(255)
 		,total_staff INT
 		,phone_extension VARCHAR(10)
+		,description VARCHAR(max)
 		);
 END
 

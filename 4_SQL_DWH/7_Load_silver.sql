@@ -90,14 +90,14 @@ department_id
 ,floor
 ,head_doctor_id
 ,total_staff
-,phone_extension)
+,phone_extension,description)
  	Select 
 	department_id
 ,name
 ,floor
 ,head_doctor_id
 ,total_staff
-,phone_extension
+,phone_extension ,description
 	from    Bronze.Department
 	where head_doctor_id  in (Select doctor_id from    Bronze.Doctor)
 -- insert into SILVER_error.Department becuase head doctor doensot exists
@@ -111,14 +111,14 @@ department_id
 ,floor
 ,head_doctor_id
 ,total_staff
-,phone_extension)
+,phone_extension,description)
  	Select 
 	department_id
 ,name
 ,floor
 ,head_doctor_id
 ,total_staff
-,phone_extension
+,phone_extension,description
 	from    Bronze.Department
 	where head_doctor_id not in (Select doctor_id from    Bronze.Doctor)
 
@@ -863,7 +863,7 @@ discount
 	or doctor_id not in (select doctor_id from silver.Doctor)
 	or test_id not in (select test_id from silver.MedicalTest)
 
-
+	--select * from silver_error.PatientTest
 
 	    /*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
 

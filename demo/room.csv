@@ -1,0 +1,52 @@
+room_id,department_id,room_type,floor,capacity,status,daily_charge,avg_monthly_maintenance_cost
+R000,,Emergency Room,0,8,Available,5000,1500
+R001,,Waiting Room,0,15,Available,0,0
+G003,,Ambulance Bay,0,4,Available,0,0
+R004,,Pharmacy,0,6,Available,0,0
+H005,,Reception,0,10,Available,0,0
+R100,DEPT005,Pediatrics Ward,1,5,Available,1000,300
+R101,,Operating Theatre 1,1,1,Available,5000,1500
+R102,,Operating Theatre 2,1,1,Available,5000,1500
+R103,,Operating Theatre 3,1,1,Available,5000,1500
+R104,,CSSD,1,2,Available,0,0
+R105,,Mother ICU,1,2,Available,5000,1500
+R200,,Radiology & Imaging,2,2,Available,3000,900
+R201,DEPT003,Bones ICU,2,2,Available,5000,1500
+R202,DEPT003,General Ward,2,5,Available,1000,300
+R203,DEPT003,Private Room,2,1,Occupied,8000,2400
+R204,DEPT008,Ophthalmology OPD,2,2,Available,1000,300
+R205,,ICU,2,3,Available,5000,1500
+R300,,CT Room,3,1,Available,3000,900
+R301,DEPT001,Cardiac ICU,3,2,Available,5000,1500
+R302,DEPT001,General Ward,3,5,Available,1000,300
+R303,DEPT001,Private Room,3,1,Occupied,8000,2400
+R304,DEPT001,Cardiology OPD,3,2,Available,1000,300
+R305,DEPT006,Dermatology OPD,3,2,Available,1000,300
+R400,DEPT002,ICU,4,2,Available,5000,1500
+R401,DEPT002,General Ward,4,5,Available,1000,300
+R402,DEPT002,Private Room,4,1,Occupied,8000,2400
+R403,DEPT007,ICU,4,2,Available,5000,1500
+R404,DEPT007,General Ward,4,5,Available,1000,300
+R405,DEPT007,Private Room,4,1,Occupied,8000,2400
+R500,DEPT004,Gynecology OPD,5,2,Available,1000,300
+R501,DEPT009,ENT OPD,5,2,Available,1000,300
+R502,,ICU,5,2,Available,5000,1500
+R503,DEPT004,ICU,5,2,Available,5000,1500
+R504,DEPT004,General Ward,5,5,Available,1000,300
+R505,DEPT004,Private Room,5,1,Occupied,8000,2400
+R600,DEPT010,Psychiatry OPD,6,2,Available,1000,300
+R601,DEPT011,Urology OPD,6,2,Available,1000,300
+R602,DEPT012,Endocrinology OPD,6,2,Available,1000,300
+R603,DEPT013,Nephrology OPD,6,2,Available,1000,300
+R604,DEPT014,Pulmonology OPD,6,2,Available,1000,300
+R605,DEPT015,Oncology OPD,6,2,Available,1000,300
+R700,,ICU 1,7,2,Available,5000,1500
+R701,,ICU 2,7,2,Available,5000,1500
+R703,,General Ward,7,5,Available,1000,300
+R704,,General Ward,7,5,Available,1000,300
+R705,,Private Room,7,1,Occupied,8000,2400
+R801,,Kitchen,8,3,Available,0,0
+R802,,Cafeteria,8,8,Available,0,0
+R803,,Physiotherapy Room,8,4,Available,1000,300
+R804,,Staff Changing Room,8,4,Available,0,0
+R805,,Dialysis Unit,8,4,Available,2500,750

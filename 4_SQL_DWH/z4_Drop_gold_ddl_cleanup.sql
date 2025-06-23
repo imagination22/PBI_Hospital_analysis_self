@@ -49,8 +49,34 @@ drop table if exists gold.Fact_PatientStay
 drop table if exists gold.Fact_PatientVitals
 drop table if exists gold.Fact_SatisfactionScore
 drop table if exists gold.Fact_Tests
-
-
+drop table if exists  gold.pbi_appointment
+drop table if exists  gold.pbi_rating
+drop table if exists  GOLD.PBI_BILL
+drop table if exists  GOLD.pivot_bill
+drop table if exists  GOLD.pbi_ageinfo
+drop table if exists  GOLD.pbi_room_status
+drop table if exists  GOLD.dim_surgery
+drop table if exists  GOLD.pbi_avg_stay
+drop table if exists  gold.pbi_tests
+drop table if exists  gold.pbi_batch_dristribution
+drop table if exists  gold.pbi_stock_value
+drop table if exists  gold.pbi_Reorder_Alert
+drop table if exists  gold.pbi_Medicines_Nearing_Expiry
+drop table if exists  gold.pbi_stock_health_overview
+drop table if exists  gold.pbi_department_revenue
+drop table if exists gold.pbi_department_sub_revenue
+drop table if exists gold.pbi_billing_effciency
+drop table if exists gold.pbi_doctor_per_department
+drop table if exists gold.pbi_dept_avg_bill_per_patient
+drop table if exists gold.pbi_top_diagnosis_per_dept
+drop table if exists gold.pbi_surgery_vs_no_surgery
+drop table if exists  gold.pbi_reorder_risk_analysis
+drop table if exists  GOLD.pbi_reorder_risk_analysis
+drop table if exists  gold.pbi_customer_purchase_trend
+drop table if exists  GOLD.PBI_STOCK_ANALYSIS
+DROP TABLE IF EXISTS  GOLD.pbi_paymentmethod
+DROP TABLE IF EXISTS gold.pbi_department_UNPIVOT_revenue
+DROP TABLE IF EXISTS gold.fact_medicine_purchase
 END TRY
 	BEGIN CATCH
 		PRINT '=========================================='

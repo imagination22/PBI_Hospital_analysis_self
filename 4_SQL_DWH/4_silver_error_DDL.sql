@@ -71,7 +71,7 @@ BEGIN
 		,head_doctor_id VARCHAR(255)
 		,total_staff INT
 		,phone_extension VARCHAR(10)
-
+		,description VARCHAR(max)
 		--FOREIGN KEY (head_doctor_id) REFERENCES Doctor(doctor_id)
 		);
 END
@@ -323,7 +323,7 @@ BEGIN
 		,department_id VARCHAR(255)
 		,cost DECIMAL(10, 2)
 		,duration INT
-		,fasting_required CHAR(10)
+		,fasting_required varCHAR(10)
 	--	,FOREIGN KEY (department_id) REFERENCES Silver_error.Department(department_id)
 		);
 END
